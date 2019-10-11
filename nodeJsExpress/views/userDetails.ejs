@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<% include ./layout %>
+
+<body>
+    <div style="margin-left: 40px">
+        <h1 class="text-capitalize"> Welcome, <%= user.name%> </h1>
+       
+                <a class="lead text-dark"  href="/dashboard"> Favourite band list
+                </a> 
+    </div>
+    <br /><br />
+
+    <div class="card text-center col-lg-10 mx-auto">
+        <h4 class="card-header bg-success text-white">
+            Your Details
+        </h4>
+        <div class="card-body">
+            <% if (userDetails) { %>
+            <table class="table table-hover table-sm">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Company</th>
+                        <th scope="col">Date of Birth</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-capitalize"><%= userDetails.name %></td>
+                        <% if (userDetails.company) {%>
+                        <td class="text-capitalize"><%= userDetails.company %></td>
+                        <% }else{%>
+                        <td>--null--</td>
+                        <%}%>
+                        <td><%= userDetails.dob.toDateString() %></td>
+                        <td><%= userDetails.email %></td>
+                    </tr>
+                </tbody>
+            </table>
+            <% }%>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

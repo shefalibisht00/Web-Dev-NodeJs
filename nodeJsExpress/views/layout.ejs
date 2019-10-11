@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Events: </title>
+</head>
+<header>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-8 mb-3 bg-warning border-bottom box-shadow">
+    <h4 class="my-0 mr-md-auto font-weight-bold"><i class="fa fa-soundcloud"></i>
+      Music Band</h4>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <% if (!user) { %>
+      <a class="p text-dark" href="/login">SignIn</a>
+      <a class="p-2 text-dark" href="/register">Register</a>
+      <% } else { %>
+        <a class="p fa fa-user fa-lg"></a>
+      <a class="p-2 text-capitalize text-dark font-weight-bold" href="/myDetails"> Hi, <%= user.email%></a>
+
+  <a class="p-2 text-dark" href="/dashboard" title="dashboard">Dashboard</a>
+  <a class="p-2 text-dark" href="/logout" title="logout">Logout</a>
+  <% } %>
+  </nav>
+  </div>
+</header>
+
+<body>
+  <div class="container">
+
+ 
+  </div>
+</body>
+<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+</html>

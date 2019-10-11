@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<header>
+  <% include ./layout %>
+</header>
+
+<body>
+    <script>
+        $(function() {
+           $( "#datepicker-1" ).datepicker();
+        });
+     </script>
+  <div class="row mt-5"></div>
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i> Register</h1>
+      <% if (error) { %>
+      <div class="alert alert-danger" role="alert">
+        <%= error %>
+      </div>
+      <% } %>
+      <form action="/register" method="POST">
+        <div class="form-group"><label for="name">Name</label><input class="form-control" id="name" type="text"
+            name="name" placeholder="Enter Name" /></div>
+        <div class="form-group"><label for="company">Company</label><input class="form-control" id="company" type="text"
+            name="company" placeholder="Enter Company" /></div>
+        <div class="form-group"><label for="dob">Date of Birth</label><input class="form-control" id="datepicker-1" type="text"
+            name="dob" placeholder="Enter Date of Birth" /></div>
+        <div class="form-group"><label for="email">Email</label><input class="form-control" id="email"
+            type="text" name="email" placeholder="Enter email" /></div>
+        <div class="form-group"><label for="password">Password</label><input class="form-control" id="password"
+            type="password" name="password" placeholder="Enter Password" /></div><button
+          class="btn btn-primary btn-block" type="submit">Register</button>
+      </form>
+      <p class="lead mt-4">No Account? <a href="/login">Login in</a></p>
+    </div>
+  </div>
+
+</body>
+
+</html>
