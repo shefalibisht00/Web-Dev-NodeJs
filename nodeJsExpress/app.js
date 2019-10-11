@@ -39,8 +39,11 @@ app.set('view engine', 'ejs');
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 var models = require("./models");
-// Global variables
 
+app.use(function(req, res, next) {
+  res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+  next();
+});
 
 // Import all routes
 app.use('/',  require('./routes/index'));
